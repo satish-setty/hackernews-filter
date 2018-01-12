@@ -13,6 +13,7 @@ from bs4 import BeautifulSoup
 
 
 SCAN_URL = 'https://news.ycombinator.com/'
+NUM_PAGES = 2
 VERBOTEN_LIST = 'filter.txt'
 
 def get_stories():
@@ -20,28 +21,30 @@ def get_stories():
     story_rows = []
     stories = []
 
-    # fetch!
-    r = requests.get(SCAN_URL, verify=True)
-    souped_body = BeautifulSoup(r.text, 'lxml')
+    for p in range(1, NUM_PAGES + 1):
+        # fetch!
+        r = requests.get(SCAN_URL + "?p=" + str(p), verify=True)
+        souped_body = BeautifulSoup(r.text, 'lxml')
 
-    try:
-        storytable_html = souped_body('table')[2]
-    except IndexError:
-        raise Exception("Can't find news story table. " +
-                        "hackernews HTML format probably changed.")
+        try:
+            storytable_html = souped_body('table')[2]
+        except IndexError:
+            raise Exception("Can't find news story table. " +
+                            "hackernews HTML format probably changed.")
 
-    raw_stories = storytable_html.find_all('tr')
-    for tr in raw_stories:
-        # we want strings, not BeautifulSoup tag objects
-        row = tr.encode('utf-8')
+        raw_stories = storytable_html.find_all('tr')
 
-        # Skip to next iteration of for loop if you see a superfluous table row.
-        # (anything without a 'vote?for=' link which also skips sponsored posts.
-        # score!)
+        for tr in raw_stories:
+            # we want strings, not BeautifulSoup tag objects
+            row = tr.encode('utf-8')
 
-        if not re.match(r'.*"vote\?id=\d+.*', str(row)):
-            continue
-        story_rows.append(tr)
+            # Skip to next iteration of for loop if you see a superfluous table row.
+            # (anything without a 'vote?for=' link which also skips sponsored posts.
+            # score!)
+
+            if not re.match(r'.*"vote\?id=\d+.*', str(row)):
+                continue
+            story_rows.append(tr)
 
     for story_row in story_rows:
         story = {}
