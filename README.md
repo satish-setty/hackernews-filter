@@ -33,8 +33,14 @@ Requirements
 --
 
 - Python 2.7 or Python 3.4
-- Python modules: BeautifulSoup and Requests
+- Python modules: BeautifulSoup, Requests, lxml and Bottle
 
+If you're on Debian family:
+
+```
+# Or their equivalent Python 2 versions
+sudo apt-get install python3-bs4 python3-requests python3-bottle python3-lxml
+```
 
 
 Alternatives
