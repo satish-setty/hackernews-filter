@@ -35,6 +35,9 @@
 			<li class="story">
 				<a href="{{ story['link'] }}">
 					{{ story['title'] }}
+				</a>&emsp;
+                                <a href="{{ story['comments'] }}">
+					【Comments】
 				</a>
 			</li>
 		%end
@@ -46,6 +49,9 @@
 			<p class="story crap">
 				<a href="{{ story['link'] }}">
 					{{ story['title'] }}
+				</a>&emsp;
+                                <a href="{{ story['comments'] }}">
+					【Comments】
 				</a>
 			</p>
 		%end

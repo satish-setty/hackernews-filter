@@ -53,7 +53,13 @@ def get_stories():
         # Handle relative HN links
         if not story['link'].startswith('http'):
             story['link'] = SCAN_URL + story['link']
+
+        vote = story_row.find_all('a')[0].get('href')
+        item_id = re.match(r'.*id=(\d+).*', vote).group(1)
+        story['comments'] = SCAN_URL + 'item?id=' + item_id
+
         stories.append(story)
+
     return stories
 
 
