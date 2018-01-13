@@ -1,7 +1,7 @@
 # Go read something more fulfilling
 (?i).*(thenextweb|scribd|phoronix|gigaom|slideshare|stratechery).*
 (?i).*(qz|zdnet|medium\.com).*
-(?i).*Thoughts\ on\ .*
+(?i).*(Thoughts|Reflections)\ on.*
 
 # pseudojournalism
 (?i).*(businessinsider|techcrunch|crunchbase).*
@@ -27,6 +27,7 @@
 # or your CSS framework
 (?i).*(spotify|whatsapp).*
 (?i).*(javascript|jquery|in\ (the|your)\ browser).*
+(?i).*(angular|react|node|nodejs|ember|meteor|vue|npm).*
 
 # Chat apps are so 90s
 (?i).*(whatsapp|telegram|diaspora|matrix|riot|signal|skype).*
@@ -59,7 +60,7 @@
 
 # I really don't care about Bitcoin
 (?i).*(coinbase|mt(. ?)?gox).*
-.*(BTC|LTC).*
+.*(BTC|LTC|ETH).*
 (?i).*(strange|doge|bit|lite|flex|name|sim|file)coin.*
 (?i).*(satoshi|nakamoto).*
 (?i).*cryptocurrency.*
@@ -85,7 +86,9 @@
 (?i).*justinjackson.ca.*
 
 # I like my reality, not yours
-.*(Rift|Oculus|Glass).*
+.*(Rift|Oculus|Glass|VR|immersive).*
+(?i).*(virtual.*reality|reality.*virtual).*
+
 
 # no new stories since 2004--stop posting everything
 # from these sites just because you discovered it this afternoon
@@ -93,6 +96,7 @@
 
 # Remember when Apple cared about computers and pro customers?
 .*i(OS|Cloud).*
+.*App\ Store.*
 
 # The Sugarhill Gang were rap geniuses. You are not a rap genius.
 # You wouldn't even be polluting the front page if you weren't a Heroku customer.
