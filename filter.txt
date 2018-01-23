@@ -1,10 +1,11 @@
 # Go read something more fulfilling
 (?i).*(thenextweb|scribd|phoronix|gigaom|slideshare|stratechery).*
-(?i).*(qz|zdnet|medium\.com).*
+(?i).*(qz|zdnet|medium\.com|vox\.com).*
 (?i).*(Thoughts|Reflections)\ on.*
 
 # If you wanna read US/UK news, don't spam rest of the world
 (?i).*(nytimes|wsj|washingtonpost|bbc|theguardian).*
+(?i).*(New\ York|California|San\ Francisco|Silicon\ Valley|London).*
 
 # pseudojournalism
 (?i).*(businessinsider|techcrunch|crunchbase).*
