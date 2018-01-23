@@ -3,6 +3,9 @@
 (?i).*(qz|zdnet|medium\.com).*
 (?i).*(Thoughts|Reflections)\ on.*
 
+# If you wanna read US/UK news, don't spam rest of the world
+(?i).*(nytimes|wsj|washingtonpost|bbc|theguardian).*
+
 # pseudojournalism
 (?i).*(businessinsider|techcrunch|crunchbase).*
 
