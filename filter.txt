@@ -4,7 +4,7 @@
 (?i).*(Thoughts|Reflections)\ on.*
 
 # If you wanna read US/UK news, don't spam rest of the world
-(?i).*(nytimes|wsj|washingtonpost|bbc|theguardian).*
+(?i).*(nytimes|wsj|washingtonpost|bbc|theguardian|economist\.com|cnbc|cbc\.ca).*
 (?i).*(New\ York|California|San\ Francisco|Silicon\ Valley|London).*
 
 # pseudojournalism
